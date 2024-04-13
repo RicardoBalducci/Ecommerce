@@ -10,7 +10,7 @@ function App() {
           alert(data);
         }}
       >
-        Click aqui
+        Click en 2
       </button>
     </>
   );
