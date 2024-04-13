@@ -1,8 +1,10 @@
 import "./App.css";
+import Principal from "./module/principal/principal";
 
 function App() {
   return (
     <>
+      <Principal></Principal>
       <button
         onClick={async () => {
           const responsive = await fetch("/api");

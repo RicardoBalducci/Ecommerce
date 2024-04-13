@@ -15,7 +15,9 @@
     "apps/*"
   ],
   "dependencies": {
-    "@nestjs/common": "^10.3.7"
+    "@nestjs/common": "^10.3.7",
+    "@types/react-transition-group": "^4.4.10",
+    "@types/warning": "^3.0.3"
   },
   "devDependencies": {
     "turbo": "^1.13.2"
