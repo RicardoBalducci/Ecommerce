@@ -1,19 +1,11 @@
 import "./App.css";
 import Principal from "./module/principal/principal";
-
+import { Prueba } from "./prueba";
 function App() {
   return (
     <>
       <Principal></Principal>
-      <button
-        onClick={async () => {
-          const responsive = await fetch("/api");
-          const data = await responsive.text();
-          alert(data);
-        }}
-      >
-        Click aqui
-      </button>
+      <button onClick={Prueba}>Click aqui</button>
     </>
   );
 }
