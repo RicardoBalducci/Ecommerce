@@ -1,8 +1,11 @@
-import "../css/button.module.css";
+import styles from "../css/button.module.css";
+
 function BotonPrincipal() {
   return (
     <>
-      <button className="boton-principal">Click aqui</button>
+      <button className={styles["boton-principal"]}>
+        Click en este pto lugar
+      </button>
     </>
   );
 }

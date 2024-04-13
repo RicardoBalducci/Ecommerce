@@ -1,5 +1,12 @@
 .boton-principal {
   margin: 10px;
-  background-color: #ff4f;
-  color: aqua;
+  background-color: #6e4f4f;
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.boton-principal:hover {
+  background-color: #855959;
 }
