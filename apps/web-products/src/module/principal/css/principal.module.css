@@ -1,0 +1,53 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Container img {
+  width: 30%;
+  margin-right: 20px;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.Container img:hover,
+.Container img.zoomed {
+  transform: scale(1.2);
+  cursor: zoom-out;
+}
+
+.Container .Texto {
+  display: flex;
+  flex-direction: column;
+}
+
+.Container h1 {
+  text-align: left;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.Container p {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .Container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Container img {
+    width: 80%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .Container h1 {
+    text-align: center;
+    font-size: 26px;
+  }
+}

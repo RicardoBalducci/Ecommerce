@@ -1,19 +1,25 @@
 import "./App.css";
 import Principal from "./module/principal/principal";
-import { Prueba } from "./prueba";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 function App() {
   return (
-    <>
-      <Principal></Principal>
-      <button onClick={Prueba}>Click aqui</button>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Principal />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
 
 /*
-/**
+<Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+
+/**import Principal from "./module/principal/principal";
+import { Prueba } from "./prueba";
  * 
  * npm install react-router-dom
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
