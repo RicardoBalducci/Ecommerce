@@ -1,0 +1,88 @@
+[debug] [2024-05-15T17:47:23.660Z] ----------------------------------------------------------------------
+[debug] [2024-05-15T17:47:23.662Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-15T17:47:23.663Z] CLI Version:   13.9.0
+[debug] [2024-05-15T17:47:23.663Z] Platform:      win32
+[debug] [2024-05-15T17:47:23.664Z] Node Version:  v18.15.0
+[debug] [2024-05-15T17:47:23.665Z] Time:          Wed May 15 2024 13:47:23 GMT-0400 (hora estándar de Paraguay)
+[debug] [2024-05-15T17:47:23.666Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-15T17:47:23.765Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T17:47:23.766Z] > authorizing via signed-in user (bandrock2806@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Usuario\Desktop\Ecommerce
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-15T17:47:46.815Z] > refreshing access token with scopes: []
+[debug] [2024-05-15T17:47:46.817Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2024-05-15T17:47:46.818Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-05-15T17:47:47.379Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2024-05-15T17:47:47.380Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2024-05-15T17:47:47.397Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-05-15T17:47:48.016Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-05-15T17:47:48.016Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project ecommerce-9e7cc (Ecommerce) 
+[info] 
+=== Hosting Setup
+[debug] [2024-05-15T17:47:51.370Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc [none]
+[debug] [2024-05-15T17:47:51.977Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc 200
+[debug] [2024-05-15T17:47:51.977Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc {"projectId":"ecommerce-9e7cc","projectNumber":"611837136539","displayName":"Ecommerce","name":"projects/ecommerce-9e7cc","resources":{"hostingSite":"ecommerce-9e7cc"},"state":"ACTIVE","etag":"1_762cf6a2-4891-495d-b3fc-d7bfcab2935d"}
+[debug] [2024-05-15T17:50:15.104Z] ----------------------------------------------------------------------
+[debug] [2024-05-15T17:50:15.106Z] Command:       C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-05-15T17:50:15.106Z] CLI Version:   13.9.0
+[debug] [2024-05-15T17:50:15.107Z] Platform:      win32
+[debug] [2024-05-15T17:50:15.107Z] Node Version:  v18.15.0
+[debug] [2024-05-15T17:50:15.109Z] Time:          Wed May 15 2024 13:50:15 GMT-0400 (hora estándar de Paraguay)
+[debug] [2024-05-15T17:50:15.109Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-05-15T17:50:15.217Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-05-15T17:50:15.217Z] > authorizing via signed-in user (bandrock2806@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Usuario\Desktop\Ecommerce
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-05-15T17:50:20.490Z] Using project from CLI flag: ecommerce-9e7cc
+[debug] [2024-05-15T17:50:20.493Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc [none]
+[debug] [2024-05-15T17:50:21.155Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc 200
+[debug] [2024-05-15T17:50:21.155Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc {"projectId":"ecommerce-9e7cc","projectNumber":"611837136539","displayName":"Ecommerce","name":"projects/ecommerce-9e7cc","resources":{"hostingSite":"ecommerce-9e7cc"},"state":"ACTIVE","etag":"1_762cf6a2-4891-495d-b3fc-d7bfcab2935d"}
+[info] i  Using project ecommerce-9e7cc (Ecommerce) 
+[info] 
+=== Hosting Setup
+[debug] [2024-05-15T17:50:21.169Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc [none]
+[debug] [2024-05-15T17:50:21.655Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc 200
+[debug] [2024-05-15T17:50:21.655Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-9e7cc {"projectId":"ecommerce-9e7cc","projectNumber":"611837136539","displayName":"Ecommerce","name":"projects/ecommerce-9e7cc","resources":{"hostingSite":"ecommerce-9e7cc"},"state":"ACTIVE","etag":"1_762cf6a2-4891-495d-b3fc-d7bfcab2935d"}
