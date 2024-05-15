@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "start": "node apps/api-products/dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,7 +16,8 @@
     "apps/*"
   ],
   "dependencies": {
-    "@nestjs/common": "^10.3.7"
+    "@nestjs/common": "^10.3.7",
+    "@nestjs/serve-static": "^4.0.2"
   },
   "devDependencies": {
     "turbo": "^1.13.2"
