@@ -12,6 +12,8 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
+const core_1 = require("@nestjs/core");
+const not_found_filter_1 = require("./not-found.filter");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -23,7 +25,13 @@ exports.AppModule = AppModule = __decorate([
             }),
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [
+            app_service_1.AppService,
+            {
+                provide: core_1.APP_FILTER,
+                useClass: not_found_filter_1.NotFoundExceptionFilter,
+            },
+        ],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
