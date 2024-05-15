@@ -7,10 +7,10 @@ import { APP_FILTER } from "@nestjs/core";
 import { NotFoundExceptionFilter } from "./not-found.filter";
 @Module({
   imports: [
-    /*ServeStaticModule.forRoot({
+    ServeStaticModule.forRoot({
       rootPath: join(__dirname, "../../", "web-products/dist"),
       exclude: ["api-products/*"],
-    }),*/
+    }),
   ],
   controllers: [AppController],
   providers: [
