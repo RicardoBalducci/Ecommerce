@@ -9,6 +9,7 @@ import { NotFoundExceptionFilter } from "./not-found.filter";
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, "../../", "web-products/dist"),
+      exclude: ["api-products/*"],
     }),
   ],
   controllers: [AppController],
