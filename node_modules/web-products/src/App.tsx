@@ -5,7 +5,9 @@ function App() {
     <>
       <button
         onClick={async () => {
-          const data = 1 + 1;
+          //const responsive = await fetch("/api");
+          //const data = await responsive.text();
+          const data = 1 + 2;
           alert(data);
         }}
       >
