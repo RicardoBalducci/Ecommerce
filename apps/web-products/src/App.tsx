@@ -1,8 +1,13 @@
-import "./App.css";
-
 function App() {
   return (
-    <>
+    
+  );
+}
+
+export default App;
+
+/*
+<>
       <button
         onClick={async () => {
           const responsive = await fetch("/api");
@@ -13,7 +18,4 @@ function App() {
         Click aqui
       </button>
     </>
-  );
-}
-
-export default App;
+*/
