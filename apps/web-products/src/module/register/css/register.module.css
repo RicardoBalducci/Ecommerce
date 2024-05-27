@@ -1,20 +1,43 @@
-.form {
+.container {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   margin: 0 auto;
 }
 
-.formGroup {
-  margin-bottom: 20px;
+.button {
+  background-color: #a9db58;
+  width: 450px;
+  border-radius: 30px;
+  margin-top: 20px;
+  border: transparent;
+  padding: 15px;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-.label {
-  font-weight: bold;
+.button:hover {
+  background-color: #83a9ee;
 }
 
-.input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.form {
+  border: 3px solid #fff;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.inputs {
+  margin: 20px;
+  padding: 15px;
+  height: 20px;
+  width: 400px;
+  border-radius: 30px;
+  border: transparent;
+  color: #3d3d3d;
+  font-size: 20px;
 }
