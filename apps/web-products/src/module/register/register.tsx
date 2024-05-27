@@ -1,22 +1,25 @@
 import style from "./css/register.module.css";
+
 function Register() {
   return (
-    <form action="">
-      <div>
-        <label className={style.Titulo}>Nombre</label>
-        <input type="text" id="nombre" />
+    <form className={style.form} action="">
+      <div className={style.formGroup}>
+        <label className={style.label} htmlFor="nombre">
+          Nombre
+        </label>
+        <input className={style.input} type="text" id="nombre" />
       </div>
-      <div>
-        <label htmlFor="correo" className={style.Titulo}>
+      <div className={style.formGroup}>
+        <label className={style.label} htmlFor="correo">
           Correo
         </label>
-        <input type="text" id="correo" />
+        <input className={style.input} type="text" id="correo" />
       </div>
-      <div>
-        <label htmlFor="contraseña" className={style.Titulo}>
+      <div className={style.formGroup}>
+        <label className={style.label} htmlFor="contraseña">
           Contraseña
         </label>
-        <input type="password" id="contraseña" />
+        <input className={style.input} type="password" id="contraseña" />
       </div>
     </form>
   );
