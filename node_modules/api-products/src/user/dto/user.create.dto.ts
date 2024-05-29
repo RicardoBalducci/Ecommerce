@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString } from "class-validator";
+import { IsEmail, IsNotEmpty, IsString, Length } from "class-validator";
 import { v4 as uuidv4 } from "uuid";
 
 export class UserDTO {
@@ -15,6 +15,7 @@ export class UserDTO {
 
   @IsString()
   @IsNotEmpty()
+  @Length(6, 20)
   password: string;
 
   constructor(name: string, email: string, password: string) {
