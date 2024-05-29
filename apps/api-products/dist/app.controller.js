@@ -26,6 +26,12 @@ let AppController = class AppController {
     async create(createDto) {
         await this.appService.create(createDto);
     }
+    async selectAndShow(id) {
+        return await this.appService.getAllId(id);
+    }
+    async delete(id) {
+        return await this.appService.delete(id);
+    }
 };
 exports.AppController = AppController;
 __decorate([
@@ -41,6 +47,20 @@ __decorate([
     __metadata("design:paramtypes", [create_dto_1.CreateDto]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "selectAndShow", null);
+__decorate([
+    (0, common_1.Delete)("/:id"),
+    __param(0, (0, common_1.Param)("id")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "delete", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

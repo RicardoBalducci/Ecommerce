@@ -29,15 +29,7 @@ let AppService = class AppService {
         return await this.firestoreService.getAll();
     }
     async getAllId(documentId) {
-        const users = await this.firestoreService.getAll();
-        const selecteduser = users.find((user) => user.id === documentId);
-        if (selecteduser) {
-            console.log(selecteduser);
-            return selecteduser;
-        }
-        else {
-            throw new Error("user not found");
-        }
+        return await this.firestoreService.getAllId(documentId);
     }
 };
 exports.AppService = AppService;

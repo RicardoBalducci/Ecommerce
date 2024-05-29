@@ -63,6 +63,18 @@ let FirestoreService = class FirestoreService {
         const user = snapshot.docs.map((doc) => doc.data());
         return user;
     }
+    async getAllId(documentId) {
+        const firestore = this.db;
+        const snapshot = await firestore.collection("/user").doc(documentId).get();
+        if (snapshot.exists) {
+            const selectedDocument = snapshot.data();
+            console.log(selectedDocument);
+            return selectedDocument;
+        }
+        else {
+            throw new Error("Document not found");
+        }
+    }
 };
 exports.FirestoreService = FirestoreService;
 exports.FirestoreService = FirestoreService = __decorate([

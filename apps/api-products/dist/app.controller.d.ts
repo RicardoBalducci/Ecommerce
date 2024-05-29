@@ -5,4 +5,6 @@ export declare class AppController {
     constructor(appService: AppService);
     getAll(): Promise<any[]>;
     create(createDto: CreateDto): Promise<void>;
+    selectAndShow(id: string): Promise<any>;
+    delete(id: string): Promise<any>;
 }

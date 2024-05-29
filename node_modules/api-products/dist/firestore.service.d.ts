@@ -5,4 +5,5 @@ export declare class FirestoreService {
     eliminar(documentId: string): Promise<void>;
     modificar(documentId: string, updatedDto: any): Promise<void>;
     getAll(): Promise<any[]>;
+    getAllId(documentId: string): Promise<any>;
 }
