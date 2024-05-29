@@ -1,3 +1,4 @@
+import { FirestoreService } from "./firestore.service";
 import { Module } from "@nestjs/common";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
@@ -14,6 +15,7 @@ import { NotFoundExceptionFilter } from "./not-found.filter";
   ],
   controllers: [AppController],
   providers: [
+    FirestoreService,
     AppService,
     {
       provide: APP_FILTER,
