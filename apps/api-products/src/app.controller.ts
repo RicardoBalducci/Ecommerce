@@ -6,7 +6,12 @@ import { CreateDto } from "./dto/create.dto";
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Post("/create")
+  @Get()
+  async getAll(): Promise<any[]> {
+    return await this.appService.getAll();
+  }
+
+  @Post()
   async create(@Body() createDto: CreateDto): Promise<void> {
     await this.appService.create(createDto);
   }

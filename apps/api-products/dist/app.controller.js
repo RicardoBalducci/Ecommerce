@@ -20,13 +20,22 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
+    async getAll() {
+        return await this.appService.getAll();
+    }
     async create(createDto) {
         await this.appService.create(createDto);
     }
 };
 exports.AppController = AppController;
 __decorate([
-    (0, common_1.Post)("/create"),
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getAll", null);
+__decorate([
+    (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_dto_1.CreateDto]),

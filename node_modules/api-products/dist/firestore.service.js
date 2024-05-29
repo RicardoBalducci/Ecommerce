@@ -45,8 +45,22 @@ let FirestoreService = class FirestoreService {
         this.db = admin.firestore();
     }
     async create(createdDto) {
-        const firestore = admin.firestore();
+        const firestore = this.db;
         await firestore.collection("/devices").add(createdDto);
+    }
+    async eliminar(documentId) {
+        const firestore = this.db;
+        await firestore.collection("/devices").doc(documentId).delete();
+    }
+    async modificar(documentId, updatedDto) {
+        const firestore = this.db;
+        await firestore.collection("/devices").doc(documentId).update(updatedDto);
+    }
+    async getAll() {
+        const firestore = this.db;
+        const snapshot = await firestore.collection("/devices").get();
+        const devices = snapshot.docs.map((doc) => doc.data());
+        return devices;
     }
     getFirestoreInstance() {
         return this.db;

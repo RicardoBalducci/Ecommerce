@@ -16,7 +16,25 @@ let AppService = class AppService {
     constructor(firebaseService) {
         this.firebaseService = firebaseService;
     }
-    getHello() {
+    async getAll() {
+        return this.firebaseService.getAll();
+    }
+    async create(createdDto) {
+        const firestore = this.firebaseService.getFirestoreInstance();
+        const todoCollection = firestore.collection("/devices");
+        await todoCollection.add(createdDto);
+    }
+    async delete(documentId) {
+        const firestore = this.firebaseService.getFirestoreInstance();
+        const todoDocument = firestore.collection("/devices").doc(documentId);
+        await todoDocument.delete();
+    }
+    async update(documentId, updatedDto) {
+        const firestore = this.firebaseService.getFirestoreInstance();
+        const todoDocument = firestore.collection("/devices").doc(documentId);
+        await todoDocument.update(updatedDto);
+    }
+    async getHello() {
         return "Hello World!";
     }
 };
