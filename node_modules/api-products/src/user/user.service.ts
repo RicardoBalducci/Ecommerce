@@ -1,7 +1,3 @@
-/*
-https://docs.nestjs.com/providers#services
-*/
-
 import { Injectable } from "@nestjs/common";
 import { FirestoreService } from "../firestore.service";
 @Injectable()
@@ -14,6 +10,18 @@ export class UserService {
     console.log("si se pudo");
   }
 
+  async login(username: string, password: string): Promise<any> {
+    const firestore = this.firestoreService.getFirestoreInstance();
+    const userDoc = await firestore.collection("user").doc(username).get();
+    const passwordDoc = await firestore.collection("user").doc(password).get();
+    if (!userDoc.exists && !passwordDoc) {
+      throw new Error("El usuario no existe");
+    }
+    return {
+      id: userDoc.id,
+      ...userDoc.data(),
+    };
+  }
   async getAll(): Promise<any[]> {
     const firestore = this.firestoreService.getFirestoreInstance();
     const snapshot = await firestore.collection("/user").get();
