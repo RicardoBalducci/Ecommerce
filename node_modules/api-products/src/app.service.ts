@@ -3,35 +3,33 @@ import { FirestoreService } from "./firestore.service";
 
 @Injectable()
 export class AppService {
-  constructor(private readonly firebaseService: FirestoreService) {}
+  constructor(private readonly firestoreService: FirestoreService) {}
 
-  //Funcion que muestra todos los elementos de la base de datos
-  async getAll() {
-    return this.firebaseService.getAll();
-  }
-
-  //Funcion que añade un elemento a la base de datos
   async create(createdDto: any): Promise<void> {
-    const firestore = this.firebaseService.getFirestoreInstance();
-    const todoCollection = firestore.collection("/devices");
-    await todoCollection.add(createdDto);
+    await this.firestoreService.create(createdDto);
   }
-  //Funcion que elimina un elemento de la base de datos
-  async delete(documentId: string): Promise<void> {
-    const firestore = this.firebaseService.getFirestoreInstance();
-    const todoDocument = firestore.collection("/devices").doc(documentId);
 
-    await todoDocument.delete();
+  async delete(documentId: string): Promise<void> {
+    await this.firestoreService.eliminar(documentId);
   }
 
   async update(documentId: string, updatedDto: any): Promise<void> {
-    const firestore = this.firebaseService.getFirestoreInstance();
-    const todoDocument = firestore.collection("/devices").doc(documentId);
-
-    await todoDocument.update(updatedDto);
+    await this.firestoreService.modificar(documentId, updatedDto);
   }
 
-  async getHello(): Promise<string> {
-    return "Hello World!";
+  async getAll(): Promise<any[]> {
+    return await this.firestoreService.getAll();
+  }
+
+  async getAllId(documentId: string): Promise<any> {
+    const users = await this.firestoreService.getAll();
+    const selecteduser = users.find((user) => user.id === documentId);
+
+    if (selecteduser) {
+      console.log(selecteduser);
+      return selecteduser;
+    } else {
+      throw new Error("user not found");
+    }
   }
 }

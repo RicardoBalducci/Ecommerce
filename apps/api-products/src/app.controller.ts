@@ -11,7 +11,7 @@ export class AppController {
     return await this.appService.getAll();
   }
 
-  @Post()
+  @Post("/create")
   async create(@Body() createDto: CreateDto): Promise<void> {
     await this.appService.create(createDto);
   }

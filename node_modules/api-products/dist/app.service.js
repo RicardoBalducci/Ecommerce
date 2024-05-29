@@ -13,29 +13,31 @@ exports.AppService = void 0;
 const common_1 = require("@nestjs/common");
 const firestore_service_1 = require("./firestore.service");
 let AppService = class AppService {
-    constructor(firebaseService) {
-        this.firebaseService = firebaseService;
-    }
-    async getAll() {
-        return this.firebaseService.getAll();
+    constructor(firestoreService) {
+        this.firestoreService = firestoreService;
     }
     async create(createdDto) {
-        const firestore = this.firebaseService.getFirestoreInstance();
-        const todoCollection = firestore.collection("/devices");
-        await todoCollection.add(createdDto);
+        await this.firestoreService.create(createdDto);
     }
     async delete(documentId) {
-        const firestore = this.firebaseService.getFirestoreInstance();
-        const todoDocument = firestore.collection("/devices").doc(documentId);
-        await todoDocument.delete();
+        await this.firestoreService.eliminar(documentId);
     }
     async update(documentId, updatedDto) {
-        const firestore = this.firebaseService.getFirestoreInstance();
-        const todoDocument = firestore.collection("/devices").doc(documentId);
-        await todoDocument.update(updatedDto);
+        await this.firestoreService.modificar(documentId, updatedDto);
     }
-    async getHello() {
-        return "Hello World!";
+    async getAll() {
+        return await this.firestoreService.getAll();
+    }
+    async getAllId(documentId) {
+        const users = await this.firestoreService.getAll();
+        const selecteduser = users.find((user) => user.id === documentId);
+        if (selecteduser) {
+            console.log(selecteduser);
+            return selecteduser;
+        }
+        else {
+            throw new Error("user not found");
+        }
     }
 };
 exports.AppService = AppService;

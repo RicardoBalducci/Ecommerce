@@ -46,24 +46,22 @@ let FirestoreService = class FirestoreService {
     }
     async create(createdDto) {
         const firestore = this.db;
-        await firestore.collection("/devices").add(createdDto);
+        await firestore.collection("/user").add(createdDto);
+        console.log("si se pudo");
     }
     async eliminar(documentId) {
         const firestore = this.db;
-        await firestore.collection("/devices").doc(documentId).delete();
+        await firestore.collection("/user").doc(documentId).delete();
     }
     async modificar(documentId, updatedDto) {
         const firestore = this.db;
-        await firestore.collection("/devices").doc(documentId).update(updatedDto);
+        await firestore.collection("/user").doc(documentId).update(updatedDto);
     }
     async getAll() {
         const firestore = this.db;
-        const snapshot = await firestore.collection("/devices").get();
-        const devices = snapshot.docs.map((doc) => doc.data());
-        return devices;
-    }
-    getFirestoreInstance() {
-        return this.db;
+        const snapshot = await firestore.collection("/user").get();
+        const user = snapshot.docs.map((doc) => doc.data());
+        return user;
     }
 };
 exports.FirestoreService = FirestoreService;
