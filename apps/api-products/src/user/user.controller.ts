@@ -16,10 +16,17 @@ export class UserController {
     return await this.userService.getAll();
   }
 
-  @Post("/create")
-  async create(@Body() createDto: UserDTO): Promise<void> {
-    createDto.id = uuidv4();
-    await this.userService.create(createDto);
+  @Post("register")
+  async createData(@Body() data: UserDTO): Promise<void> {
+    await this.userService.create(data);
+  }
+
+  @Post("login")
+  async login(
+    @Body("name") username: string,
+    @Body("password") password: string
+  ): Promise<string> {
+    return this.userService.login(username, password);
   }
 
   @Get("/:id")

@@ -21,6 +21,15 @@ let UserService = class UserService {
         const prueba = await firestore.collection("/user").add(createdDto);
         console.log("si se pudo");
     }
+    async login(username, password) {
+        const firestore = this.firestoreService.getFirestoreInstance();
+        const userDoc = await firestore.collection("user").doc(username).get();
+        const passwordDoc = await firestore.collection("user").doc(password).get();
+        if (!userDoc.exists && !passwordDoc) {
+            throw new Error("El usuario no existe");
+        }
+        return console.log("esta logeado");
+    }
     async getAll() {
         const firestore = this.firestoreService.getFirestoreInstance();
         const snapshot = await firestore.collection("/user").get();

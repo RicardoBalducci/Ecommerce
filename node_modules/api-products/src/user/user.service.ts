@@ -17,10 +17,7 @@ export class UserService {
     if (!userDoc.exists && !passwordDoc) {
       throw new Error("El usuario no existe");
     }
-    return {
-      id: userDoc.id,
-      ...userDoc.data(),
-    };
+    return console.log("esta logeado");
   }
   async getAll(): Promise<any[]> {
     const firestore = this.firestoreService.getFirestoreInstance();

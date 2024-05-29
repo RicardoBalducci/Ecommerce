@@ -16,7 +16,6 @@ exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const user_service_1 = require("./user.service");
 const user_create_dto_1 = require("./dto/user.create.dto");
-const uuid_1 = require("uuid");
 let UserController = class UserController {
     constructor(userService) {
         this.userService = userService;
@@ -24,9 +23,11 @@ let UserController = class UserController {
     async getAll() {
         return await this.userService.getAll();
     }
-    async create(createDto) {
-        createDto.id = (0, uuid_1.v4)();
-        await this.userService.create(createDto);
+    async createData(data) {
+        await this.userService.create(data);
+    }
+    async login(username, password) {
+        return this.userService.login(username, password);
     }
     async getById(id) {
         return await this.userService.getById(id);
@@ -43,12 +44,20 @@ __decorate([
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "getAll", null);
 __decorate([
-    (0, common_1.Post)("/create"),
+    (0, common_1.Post)("register"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [user_create_dto_1.UserDTO]),
     __metadata("design:returntype", Promise)
-], UserController.prototype, "create", null);
+], UserController.prototype, "createData", null);
+__decorate([
+    (0, common_1.Post)("login"),
+    __param(0, (0, common_1.Body)("name")),
+    __param(1, (0, common_1.Body)("password")),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "login", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),
