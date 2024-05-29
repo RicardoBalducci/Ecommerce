@@ -1,8 +1,11 @@
-import { Injectable } from "@nestjs/common";
-import { FirestoreService } from "./firestore.service";
+/*
+https://docs.nestjs.com/providers#services
+*/
 
+import { Injectable } from "@nestjs/common";
+import { FirestoreService } from "../firestore.service";
 @Injectable()
-export class AppService {
+export class UserService {
   constructor(private readonly firestoreService: FirestoreService) {}
 
   async create(createdDto: any): Promise<void> {

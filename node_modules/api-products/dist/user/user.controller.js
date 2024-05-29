@@ -11,61 +11,60 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppController = void 0;
+exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
-const app_service_1 = require("./app.service");
-const create_dto_1 = require("./dto/create.dto");
+const user_service_1 = require("./user.service");
+const user_create_dto_1 = require("./dto/user.create.dto");
 const uuid_1 = require("uuid");
-let AppController = class AppController {
-    constructor(appService) {
-        this.appService = appService;
+let UserController = class UserController {
+    constructor(userService) {
+        this.userService = userService;
     }
     async getAll() {
-        return await this.appService.getAll();
+        return await this.userService.getAll();
     }
     async create(createDto) {
         createDto.id = (0, uuid_1.v4)();
-        await this.appService.create(createDto);
+        await this.userService.create(createDto);
     }
     async getById(id) {
-        return await this.appService.getById(id);
+        return await this.userService.getById(id);
     }
     async delete(id) {
-        await this.appService.delete(id);
+        await this.userService.delete(id);
     }
 };
-exports.AppController = AppController;
+exports.UserController = UserController;
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "getAll", null);
+], UserController.prototype, "getAll", null);
 __decorate([
     (0, common_1.Post)("/create"),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_b = typeof create_dto_1.CreateDto !== "undefined" && create_dto_1.CreateDto) === "function" ? _b : Object]),
+    __metadata("design:paramtypes", [user_create_dto_1.UserDTO]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "create", null);
+], UserController.prototype, "create", null);
 __decorate([
     (0, common_1.Get)("/:id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "getById", null);
+], UserController.prototype, "getById", null);
 __decorate([
     (0, common_1.Delete)("/:id"),
     __param(0, (0, common_1.Param)("id")),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "delete", null);
-exports.AppController = AppController = __decorate([
+], UserController.prototype, "delete", null);
+exports.UserController = UserController = __decorate([
     (0, common_1.Controller)(),
-    __metadata("design:paramtypes", [typeof (_a = typeof app_service_1.AppService !== "undefined" && app_service_1.AppService) === "function" ? _a : Object])
-], AppController);
-//# sourceMappingURL=app.controller.js.map
+    __metadata("design:paramtypes", [user_service_1.UserService])
+], UserController);
+//# sourceMappingURL=user.controller.js.map
