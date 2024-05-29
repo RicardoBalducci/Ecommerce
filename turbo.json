@@ -10,6 +10,9 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dis/**"]
+    },
+    "start": {
+      "dependsOn": ["^build"]
     }
   }
 }
