@@ -17,19 +17,34 @@ let AppService = class AppService {
         this.firestoreService = firestoreService;
     }
     async create(createdDto) {
-        await this.firestoreService.create(createdDto);
-    }
-    async delete(documentId) {
-        await this.firestoreService.eliminar(documentId);
-    }
-    async update(documentId, updatedDto) {
-        await this.firestoreService.modificar(documentId, updatedDto);
+        const firestore = this.firestoreService.getFirestoreInstance();
+        const prueba = await firestore.collection("/user").add(createdDto);
+        console.log("si se pudo");
     }
     async getAll() {
-        return await this.firestoreService.getAll();
+        const firestore = this.firestoreService.getFirestoreInstance();
+        const snapshot = await firestore.collection("/user").get();
+        const user = snapshot.docs.map((doc) => doc.data());
+        return user;
     }
-    async getAllId(documentId) {
-        return await this.firestoreService.getAllId(documentId);
+    async getById(id) {
+        const firestore = this.firestoreService.getFirestoreInstance();
+        const userDoc = await firestore.collection("user").doc(id).get();
+        if (!userDoc.exists) {
+            throw new Error("El usuario no existe");
+        }
+        return {
+            id: userDoc.id,
+            ...userDoc.data(),
+        };
+    }
+    async delete(id) {
+        const firestore = this.firestoreService.getFirestoreInstance();
+        const userDoc = await firestore.collection("user").doc(id).get();
+        if (!userDoc.exists) {
+            throw new Error("El usuario no existe");
+        }
+        await firestore.collection("user").doc(id).delete();
     }
 };
 exports.AppService = AppService;

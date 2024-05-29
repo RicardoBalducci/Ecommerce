@@ -6,22 +6,38 @@ export class AppService {
   constructor(private readonly firestoreService: FirestoreService) {}
 
   async create(createdDto: any): Promise<void> {
-    await this.firestoreService.create(createdDto);
-  }
-
-  async delete(documentId: string): Promise<void> {
-    await this.firestoreService.eliminar(documentId);
-  }
-
-  async update(documentId: string, updatedDto: any): Promise<void> {
-    await this.firestoreService.modificar(documentId, updatedDto);
+    const firestore = this.firestoreService.getFirestoreInstance();
+    const prueba = await firestore.collection("/user").add(createdDto);
+    console.log("si se pudo");
   }
 
   async getAll(): Promise<any[]> {
-    return await this.firestoreService.getAll();
+    const firestore = this.firestoreService.getFirestoreInstance();
+    const snapshot = await firestore.collection("/user").get();
+    const user = snapshot.docs.map((doc) => doc.data());
+    return user;
   }
 
-  async getAllId(documentId: string): Promise<any> {
-    return await this.firestoreService.getAllId(documentId);
+  async getById(id: string): Promise<any> {
+    const firestore = this.firestoreService.getFirestoreInstance();
+    const userDoc = await firestore.collection("user").doc(id).get();
+    if (!userDoc.exists) {
+      throw new Error("El usuario no existe");
+    }
+    return {
+      id: userDoc.id,
+      ...userDoc.data(),
+    };
+  }
+
+  async delete(id: string): Promise<void> {
+    const firestore = this.firestoreService.getFirestoreInstance();
+    const userDoc = await firestore.collection("user").doc(id).get();
+
+    if (!userDoc.exists) {
+      throw new Error("El usuario no existe"); //Manejar con hhtps errores
+    }
+
+    await firestore.collection("user").doc(id).delete();
   }
 }

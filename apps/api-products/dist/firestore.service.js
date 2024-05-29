@@ -44,36 +44,8 @@ let FirestoreService = class FirestoreService {
         });
         this.db = admin.firestore();
     }
-    async create(createdDto) {
-        const firestore = this.db;
-        await firestore.collection("/user").add(createdDto);
-        console.log("si se pudo");
-    }
-    async eliminar(documentId) {
-        const firestore = this.db;
-        await firestore.collection("/user").doc(documentId).delete();
-    }
-    async modificar(documentId, updatedDto) {
-        const firestore = this.db;
-        await firestore.collection("/user").doc(documentId).update(updatedDto);
-    }
-    async getAll() {
-        const firestore = this.db;
-        const snapshot = await firestore.collection("/user").get();
-        const user = snapshot.docs.map((doc) => doc.data());
-        return user;
-    }
-    async getAllId(documentId) {
-        const firestore = this.db;
-        const snapshot = await firestore.collection("/user").doc(documentId).get();
-        if (snapshot.exists) {
-            const selectedDocument = snapshot.data();
-            console.log(selectedDocument);
-            return selectedDocument;
-        }
-        else {
-            throw new Error("Document not found");
-        }
+    getFirestoreInstance() {
+        return this.db;
     }
 };
 exports.FirestoreService = FirestoreService;

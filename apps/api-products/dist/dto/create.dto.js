@@ -11,20 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateDto = void 0;
 const class_validator_1 = require("class-validator");
+const uuid_1 = require("uuid");
 class CreateDto {
     constructor(name, email, password) {
-        this.id = CreateDto.generateId();
+        this.id = (0, uuid_1.v4)();
         this.name = name;
         this.email = email;
         this.password = password;
     }
-    static generateId() {
-        CreateDto.counter++;
-        return `ID-${CreateDto.counter}`;
-    }
 }
 exports.CreateDto = CreateDto;
-CreateDto.counter = 0;
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)

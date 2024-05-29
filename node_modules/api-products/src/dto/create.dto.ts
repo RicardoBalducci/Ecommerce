@@ -1,8 +1,7 @@
 import { IsString } from "class-validator";
+import { v4 as uuidv4 } from "uuid";
 
 export class CreateDto {
-  private static counter: number = 0;
-
   @IsString()
   id: string;
 
@@ -16,14 +15,9 @@ export class CreateDto {
   password: string;
 
   constructor(name: string, email: string, password: string) {
-    this.id = CreateDto.generateId();
+    this.id = uuidv4();
     this.name = name;
     this.email = email;
     this.password = password;
-  }
-
-  private static generateId(): string {
-    CreateDto.counter++;
-    return `ID-${CreateDto.counter}`;
   }
 }

@@ -16,6 +16,7 @@ exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
 const create_dto_1 = require("./dto/create.dto");
+const uuid_1 = require("uuid");
 let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
@@ -24,13 +25,14 @@ let AppController = class AppController {
         return await this.appService.getAll();
     }
     async create(createDto) {
+        createDto.id = (0, uuid_1.v4)();
         await this.appService.create(createDto);
     }
-    async selectAndShow(id) {
-        return await this.appService.getAllId(id);
+    async getById(id) {
+        return await this.appService.getById(id);
     }
     async delete(id) {
-        return await this.appService.delete(id);
+        await this.appService.delete(id);
     }
 };
 exports.AppController = AppController;
@@ -53,7 +55,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
-], AppController.prototype, "selectAndShow", null);
+], AppController.prototype, "getById", null);
 __decorate([
     (0, common_1.Delete)("/:id"),
     __param(0, (0, common_1.Param)("id")),
