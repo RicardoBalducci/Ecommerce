@@ -5,19 +5,26 @@
   justify-content: center;
   height: 100vh;
   margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #fff;
 }
-
 .button {
   background-color: #a9db58;
-  width: 450px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 30px;
   margin-top: 20px;
   border: transparent;
-  padding: 15px;
+  padding: 10px;
   font-size: 25px;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
+.button:hover {
+  background-color: #83a9ee;
+}
 .button:hover {
   background-color: #83a9ee;
 }
@@ -29,18 +36,49 @@
   padding: 30px;
   color: #fff;
   text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .inputs {
-  margin: 20px;
-  padding: 15px;
+  margin-top: 20px;
+  padding: 20px;
   height: 20px;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   border-radius: 30px;
   border: transparent;
   color: #3d3d3d;
   font-size: 20px;
+  box-sizing: border-box;
 }
-.a {
+
+p {
+  padding: 10px;
+}
+
+a {
   color: #fff;
+}
+
+@media (max-width: 900px) {
+  h1 {
+    font-size: 20px;
+  }
+  .inputs {
+    padding: auto;
+    margin-top: 20px;
+    margin-left: 0px;
+    font-size: 15px;
+  }
+
+  .button {
+    padding: auto;
+    font-size: 20px;
+  }
+
+  p,
+  a {
+    font-size: 15px;
+  }
 }
