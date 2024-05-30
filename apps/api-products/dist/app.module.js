@@ -14,12 +14,35 @@ const serve_static_1 = require("@nestjs/serve-static");
 const path_1 = require("path");
 const core_1 = require("@nestjs/core");
 const not_found_filter_1 = require("./not-found.filter");
+const config_1 = require("@nestjs/config");
+const typeorm_1 = require("@nestjs/typeorm");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
 exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            config_1.ConfigModule.forRoot({
+                isGlobal: true,
+            }),
+            typeorm_1.TypeOrmModule.forRoot({
+                type: "postgres",
+                host: process.env.POSTGRES_HOST,
+                port: parseInt(process.env.POSTGRES_PORT),
+                username: process.env.POSTGRES_USERNAME,
+                password: process.env.POSTGRES_PASSWORD,
+                database: process.env.POSTGRES_DATABASE,
+                autoLoadEntities: true,
+                synchronize: true,
+                ssl: process.env.POSTGRES_SSL === "true",
+                extra: {
+                    ssl: process.env.POSTGRES_SSL === "true"
+                        ? {
+                            rejectUnauthorized: false,
+                        }
+                        : null,
+                },
+            }),
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: (0, path_1.join)(__dirname, "../../", "web-products/dist"),
                 exclude: ["api-products/*"],
