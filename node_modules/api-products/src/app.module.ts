@@ -20,6 +20,5 @@ import { NotFoundExceptionFilter } from "./not-found.filter";
       useClass: NotFoundExceptionFilter,
     },
   ],
-  /* */
 })
 export class AppModule {}
