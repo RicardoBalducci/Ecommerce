@@ -43,7 +43,7 @@
   color: #000;
 }
 
-/*.container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,14 +52,14 @@
 
 .carousel {
   overflow: hidden;
-  width: 100vh; 
+  width: 100vh;
 }
 
 .wrap {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 250px;
-  justify-items: stretch; 
+  justify-items: stretch;
   animation: slide 15s linear infinite;
 }
 .wrap .cuadro {
@@ -76,4 +76,20 @@
     translate: calc(-4 * 250px);
   }
 }
-*/
+
+@media (max-width: 768px) {
+  .Text h1 {
+    font-size: 30px;
+  }
+  .Text h3 {
+    font-size: 10px;
+  }
+
+  .wrap .cuadro {
+    width: 180px;
+  }
+
+  .cuadro > h3 {
+    font-size: 15px;
+  }
+}
