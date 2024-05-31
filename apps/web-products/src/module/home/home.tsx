@@ -1,9 +1,10 @@
-import { useNavigate } from "react-router-dom";
-
+//import Portada from "./components/portada/portada";
+//import Menu from "../../components/menu/menu";
+import Products from "./components/products/products";
 function Home() {
   return (
     <>
-      <h1>Hola mundi</h1>
+      <Products />
     </>
   );
 }

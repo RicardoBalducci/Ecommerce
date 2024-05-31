@@ -1,0 +1,45 @@
+.menu_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.h1 {
+  text-align: left;
+  color: white;
+}
+
+#a {
+  font-size: 20px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+}
+
+.menu-list li {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-list {
+    flex-direction: column;
+  }
+
+  .menu-list li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+/*
+<style>
+        {`
+          
+        `}
+*/
