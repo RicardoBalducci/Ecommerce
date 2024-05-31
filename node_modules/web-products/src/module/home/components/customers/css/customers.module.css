@@ -1,0 +1,68 @@
+.container {
+  color: #fff;
+  text-align: center;
+}
+.titulo {
+  font-size: 60px;
+  font-weight: bold;
+}
+.subTitulo {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.cuadro {
+  background-color: #d6d6d6;
+  width: 300px;
+  color: #000;
+  border-radius: 5px;
+  display: inline-block; /* Cambia el valor a inline-block */
+  margin: 10px; /* Ajusta el margen según sea necesario */
+}
+
+.icono {
+  margin: 20px;
+  font-size: 60px;
+}
+
+.cuadros {
+  display: grid;
+  grid-template-rows: auto auto; /* Set rows for the name and text */
+  grid-row-gap: 5px; /* Space between the name and text */
+}
+
+.nombre {
+  margin: 0; /* Remove default margin to align with the icon */
+}
+
+.nombre {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.texto {
+  margin: 0; /* Remove default margin to align with the icon */
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .cuadro {
+    width: 300px;
+  }
+  .titulo {
+    font-size: 30px;
+  }
+  .subTitulo {
+    font-size: 15px;
+  }
+  .nombre {
+    font-size: 20px;
+  }
+  .texto {
+    font-size: 13px;
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
