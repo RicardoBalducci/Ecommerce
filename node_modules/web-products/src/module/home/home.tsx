@@ -1,9 +1,16 @@
 import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const navigate = useNavigate();
+  return (
+    <>
+      <h1>Hola mundi</h1>
+    </>
+  );
+}
 
-  const handleRegisterClick = () => {
+export default Home;
+/*
+ const handleRegisterClick = () => {
     navigate("/register");
   };
 
@@ -11,12 +18,8 @@ function Home() {
     navigate("/login");
   };
 
-  return (
-    <>
+
+  
       <button onClick={handleRegisterClick}>Register</button>
       <button onClick={handleLoginClick}>Login</button>
-    </>
-  );
-}
-
-export default Home;
+*/
