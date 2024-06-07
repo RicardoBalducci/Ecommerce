@@ -3,22 +3,18 @@ import { Navbar, Nav } from "react-bootstrap";
 
 function Home() {
   return (
-    <>
-      <nav className="nav">
-        <a className="nav-link active" aria-current="page" href="#">
-          Active
-        </a>
-        <a className="nav-link" href="#">
-          Link
-        </a>
-        <a className="nav-link" href="#">
-          Link
-        </a>
-        <a className="nav-link disabled" href="#" aria-disabled="true">
-          Disabled
-        </a>
-      </nav>
-    </>
+    <Navbar bg="#1E293B" expand="lg">
+      <Navbar.Brand href="#">Mi Sitio</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#">Inicio</Nav.Link>
+          <Nav.Link href="#">Acerca de</Nav.Link>
+          <Nav.Link href="#">Servicios</Nav.Link>
+          <Nav.Link href="#">Contacto</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
