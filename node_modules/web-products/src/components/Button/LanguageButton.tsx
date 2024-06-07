@@ -4,11 +4,21 @@ import styles from "./css/LanguageButton.module.css";
 
 function LanguageButton({ language, handleLanguageChange }) {
   return (
-    <button onClick={handleLanguageChange} className={styles.languageButton}>
-      {language === "en" ? "Change Language" : "Cambiar Idioma"}
-    </button>
+    <a
+      href="#"
+      onClick={handleLanguageChange}
+      className={styles.languageButton}
+    >
+      {language === "en" ? "Change to Spanish" : "Cambiar a ingles"}
+    </a>
   );
 }
 
 export default LanguageButton;
 //
+/*
+
+<button  className={styles.languageButton}>
+      
+    </button>
+*/

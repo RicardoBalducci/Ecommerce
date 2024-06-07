@@ -1,3 +1,66 @@
-.espacio {
-  margin-top: 70px;
+.Cabecera {
+  background-color: black;
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+}
+.Cabecera_h1 {
+  font-size: 1.5em;
+}
+.Cabecera_a {
+  text-decoration: none;
+}
+.Cabecera_button {
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.Cabecera_svg {
+  width: 3em;
+  height: 3em;
+  fill: white;
+}
+.CabeceraNav {
+}
+.Cabecera_ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.Cabecera_li {
+  margin: 0 0.5em;
+  list-style: none;
+}
+@media screen and (max-width: 480px) {
+  .Cabecera_button {
+    display: flex;
+  }
+  .CabeceraNav {
+    width: 100%;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 0vh;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .CabeceraNav.isActive {
+    height: 50vh;
+    opacity: 1;
+  }
+  .Cabecera_ul {
+    flex-direction: column;
+  }
+  .Cabecera_li {
+    margin: 0.5em 0;
+  }
 }
