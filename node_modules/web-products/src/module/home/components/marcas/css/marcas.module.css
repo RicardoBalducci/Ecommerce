@@ -1,0 +1,47 @@
+.cuadro {
+  width: 600px;
+  margin: 10px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagen {
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.carousel {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.wrap {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 200px;
+  justify-items: stretch;
+  animation: slide 20s linear infinite;
+}
+.wrap .cuadro {
+  width: 100%;
+  height: 100%;
+  margin: 60px;
+  text-align: center;
+  object-fit: cover;
+  padding: 60px 0 0 0;
+}
+
+@keyframes slide {
+  to {
+    translate: calc(-4 * 250px);
+  }
+}

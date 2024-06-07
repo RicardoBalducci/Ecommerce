@@ -7,4 +7,5 @@ export declare class UserService {
     getAll(): Promise<any[]>;
     getById(id: string): Promise<any>;
     delete(id: string): Promise<void>;
+    Correo(createdDto: any): Promise<void>;
 }

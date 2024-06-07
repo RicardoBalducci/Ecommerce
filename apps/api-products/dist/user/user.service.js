@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const firestore_service_1 = require("../firestore.service");
+const email_service_1 = require("../email/email.service");
+const email_template_1 = require("../template/email.template");
 let UserService = class UserService {
     constructor(firestoreService) {
         this.firestoreService = firestoreService;
@@ -54,6 +56,11 @@ let UserService = class UserService {
             throw new Error("El usuario no existe");
         }
         await firestore.collection("user").doc(id).delete();
+    }
+    async Correo(createdDto) {
+        const emailBody = (0, email_template_1.emailBodyTemplate)(createdDto.username);
+        await (0, email_service_1.sendEmailWithAttachment)(createdDto.email, emailBody);
+        return console.log("si se pudo");
     }
 };
 exports.UserService = UserService;

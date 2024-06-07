@@ -1,5 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { FirestoreService } from "../firestore.service";
+import { sendEmailWithAttachment } from "src/email/email.service";
+import { emailBodyTemplate } from "src/template/email.template";
 @Injectable()
 export class UserService {
   constructor(private readonly firestoreService: FirestoreService) {}
@@ -47,5 +49,12 @@ export class UserService {
     }
 
     await firestore.collection("user").doc(id).delete();
+  }
+
+  async Correo(createdDto): Promise<void> {
+    const emailBody = emailBodyTemplate(createdDto.username);
+    await sendEmailWithAttachment(createdDto.email, emailBody);
+
+    return console.log("si se pudo");
   }
 }

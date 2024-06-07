@@ -1,0 +1,25 @@
+.Container {
+  text-align: center;
+  color: #fff;
+}
+
+.Titulo {
+  font-size: 50px;
+}
+
+.p {
+  font-size: 20px;
+  font-weight: 300;
+}
+@media (max-width: 768px) {
+  .cuadro {
+    width: 300px;
+    height: 250px;
+  }
+  .titulo {
+    font-size: 15px;
+  }
+  .p {
+    font-size: 10px;
+  }
+}

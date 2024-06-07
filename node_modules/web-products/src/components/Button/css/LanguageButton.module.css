@@ -1,0 +1,16 @@
+.languageButton {
+  padding: 20px;
+  margin: 20px;
+  font-size: 30px;
+  float: end;
+  background-color: rgb(153, 78, 223);
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid transparent;
+}
+@media (max-width: 768px) {
+  .languageButton {
+    padding: 10px;
+    font-size: 20px;
+  }
+}

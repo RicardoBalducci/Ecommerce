@@ -8,4 +8,5 @@ export declare class UserController {
     login(username: string, password: string): Promise<string>;
     getById(id: string): Promise<any>;
     delete(id: string): Promise<void>;
+    Correo(email: string): Promise<void>;
 }

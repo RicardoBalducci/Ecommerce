@@ -38,4 +38,9 @@ export class UserController {
   async delete(@Param("id") id: string): Promise<void> {
     await this.userService.delete(id);
   }
+
+  @Post("/:email")
+  async Correo(@Body("email") email: string): Promise<void> {
+    console.log(email);
+  }
 }

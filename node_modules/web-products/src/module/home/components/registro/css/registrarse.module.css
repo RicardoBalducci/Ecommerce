@@ -1,0 +1,48 @@
+.container {
+  text-align: center;
+}
+
+.titulo {
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+.h3 {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.input {
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 200px;
+  padding: 10px;
+  background-color: #1b232f;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .titulo {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .p,
+  .h3 {
+    font-size: 10px;
+  }
+}
